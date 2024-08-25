@@ -2,3 +2,4 @@ pandas
 langchain
 flask
 faiss-cpu
+langchain_community
