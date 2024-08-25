@@ -1,7 +1,5 @@
 pandas
-langchain
 flask
 faiss-cpu
-langchain_community
-langchain_huggingface
-sentence_transformers
+langchain-community
+sentence-transformers
