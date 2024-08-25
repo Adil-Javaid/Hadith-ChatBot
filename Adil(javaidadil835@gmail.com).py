@@ -157,7 +157,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('Hadith.html')  # This will render Hadith.html from the 'templates' directory
+    return render_template('index.html')  # This will render Hadith.html from the 'templates' directory
 
 @app.route('/query', methods=['POST'])
 def query_hadith():

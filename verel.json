@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Adil(avaidadil835@gmail.com).py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "Adil(avaidadil835@gmail.com).py"
+    }
+  ]
+}
