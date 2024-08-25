@@ -1,4 +1,3 @@
-pandas
 langchain
 flask
 faiss-cpu
