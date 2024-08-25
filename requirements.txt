@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 langchain
 flask
 faiss-cpu
 langchain_community
 langchain_huggingface
 sentence_transformers
+=======
+pandas
+flask
+faiss-cpu
+langchain-community
+sentence-transformers
+>>>>>>> 9ebd1b3f912d6f4be80fc44b99334acc15989a74
