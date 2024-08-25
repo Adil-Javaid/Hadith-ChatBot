@@ -1,0 +1,7 @@
+sdk: gradio
+dependencies:
+  - flask
+  - pandas
+  - langchain-community
+  - sentence-transformers
+  - faiss-cpu

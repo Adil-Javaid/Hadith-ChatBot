@@ -2,54 +2,54 @@
 import pandas as pd
 import os
 
-# List to store dataframes
-dfs = []
+# # List to store dataframes
+# dfs = []
 
-# Loop through the files Chapter1 to Chapter43
-for i in range(1, 44):
-    # Load each chapter CSV file
-    filename = f'Chapter{i}.csv'
-    if os.path.exists(filename):
-        df = pd.read_csv(filename)
-        dfs.append(df)
-    else:
-        print(f"File {filename} does not exist.")
+# # Loop through the files Chapter1 to Chapter43
+# for i in range(1, 44):
+#     # Load each chapter CSV file
+#     filename = f'Chapter{i}.csv'
+#     if os.path.exists(filename):
+#         df = pd.read_csv(filename)
+#         dfs.append(df)
+#     else:
+#         print(f"File {filename} does not exist.")
 
-# Concatenate all dataframes into one
-all_chapters_df = pd.concat(dfs, ignore_index=True)
+# # Concatenate all dataframes into one
+# all_chapters_df = pd.concat(dfs, ignore_index=True)
 
-# Save the combined dataframe to a new CSV file
-all_chapters_df.to_csv('allChapters.csv', index=False)
+# # Save the combined dataframe to a new CSV file
+# all_chapters_df.to_csv('allChapters.csv', index=False)
 
-print("All chapters have been combined into 'allChapters.csv'.")
+# print("All chapters have been combined into 'allChapters.csv'.")
 
 # Load the CSV file
-df = pd.read_csv('allChapters.csv')
+# df = pd.read_csv('allChapters.csv')
 
-df
+# df
 
-df.columns
+# df.columns
 
-# Select only the desired columns
-selected_columns = df[['Chapter_Number', 'Section_Number', 'Hadith_number', 'English_Hadith']]
+# # Select only the desired columns
+# selected_columns = df[['Chapter_Number', 'Section_Number', 'Hadith_number', 'English_Hadith']]
 
-# Save the selected columns to a new CSV file
-selected_columns.to_csv('english_Hadith.csv', index=False)
+# # Save the selected columns to a new CSV file
+# selected_columns.to_csv('english_Hadith.csv', index=False)
 
-print("Selected columns have been saved to 'english_Hadith.csv'.") 
+# print("Selected columns have been saved to 'english_Hadith.csv'.") 
 
-df = pd.read_csv("english_Hadith.csv")
-df
+# df = pd.read_csv("english_Hadith.csv")
+# df
 
 from langchain_community.document_loaders.csv_loader import CSVLoader
 loader = CSVLoader(file_path="./english_Hadith.csv", encoding='utf-8')
 data = loader.load()
 
-data
+# data
 
-data[0].page_content
+# data[0].page_content
 
-data[0].metadata
+# data[0].metadata
 
 
 # Function to extract and move specific fields to metadata
@@ -88,10 +88,10 @@ data = [move_fields_to_metadata(doc) for doc in data]
 # The `data` list now contains documents with AyaID, SuraID, and AyaNo moved to metadata.
 
 
-data
+# data
 
-data[0].page_content
-print(data[0].metadata['Chapter_Number'], '-', data[0].metadata['Section_Number'], '-', data[0].metadata['Hadith_number'])
+# data[0].page_content
+# print(data[0].metadata['Chapter_Number'], '-', data[0].metadata['Section_Number'], '-', data[0].metadata['Hadith_number'])
 
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.vectorstores import FAISS
