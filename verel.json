@@ -7,9 +7,6 @@
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "Adil(avaidadil835@gmail.com).py"
-    }
+    { "src": "/query", "dest": "/api/query" }
   ]
 }
